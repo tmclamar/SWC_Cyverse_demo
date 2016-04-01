@@ -30,13 +30,16 @@ gap.in %>%
   group_by(country)
   
 Angola <- gap.in$country == "Angola" 
-  plot(gap.in$year[Angola], gap.in$gdpPercap[Angola])
+  plot(gap.in$year[Angola], gap.in$gdpPercap[Angola], main = "Angola", xlab = "year", ylab = "gdpPercap")
 
 Japan <- gap.in$country == "Japan"
-  plot(gap.in$year[Japan], gap.in$gdpPercap[Japan])
+  plot(gap.in$year[Japan], gap.in$gdpPercap[Japan], main = "Japan", xlab = "year", ylab = "gdpPercap")
 
 United_States <- gap.in$country == "United States"
-  plot(gap.in$year[United_States], gap.in$gdpPercap[United_States])
+  plot(gap.in$year[United_States], gap.in$gdpPercap[United_States], main = "United States", xlab = "year", ylab = "gdpPercap")
+  
+  
+
   
 ```
 
