@@ -15,6 +15,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+<<<<<<< HEAD
 ```{r gapminder_data}
 gap.in <- read.csv("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv")
 summary (gap.in)
@@ -37,10 +38,30 @@ Japan <- gap.in$country == "Japan"
 
 United_States <- gap.in$country == "United States"
   plot(gap.in$year[United_States], gap.in$gdpPercap[United_States], main = "United States", xlab = "year", ylab = "gdpPercap")
-  
 ```
-
+  
 While Japan and the US have been steadily increaising in theoir gdp Per Capita since 1952, Angola had a marked decrease in gdp Per Capita around 1977. This decrease in gdp remained present until 2002, but is now rising again.
+
+```
+gap.in %>%
+  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>%
+  select(continent, lifeEXP) %>%
+  group_by(continent) %>%
+  summarize(lifeExpMean = mean(lifeExp), lifeExpSD = sd(lifeExp))
+
+gap.in %>%
+  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>%
+  select(continent, lifeEXP) %>%
+  group_by(continent) %>%
+  arrange(lifeEXP)
+  
+gap.in %>%
+  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia"), lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeEXP))
+  
+  
+
 
 ## Including Plots
 
@@ -48,6 +69,10 @@ You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
-```
+```gap.in %>%
+  filter(country %in% c("Angola", "Japan")) %>%
+  select(country, year, lifeExp) %>%
+  group_by(country) %>%
+  summarize(lifeExpMean = mean(lifeExp), lifeExpSD = sd(lifeExp))
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
