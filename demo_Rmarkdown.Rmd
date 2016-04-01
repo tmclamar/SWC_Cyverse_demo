@@ -38,10 +38,9 @@ Japan <- gap.in$country == "Japan"
 United_States <- gap.in$country == "United States"
   plot(gap.in$year[United_States], gap.in$gdpPercap[United_States], main = "United States", xlab = "year", ylab = "gdpPercap")
   
-  
-
-  
 ```
+
+While Japan and the US have been steadily increaising in theoir gdp Per Capita since 1952, Angola had a marked decrease in gdp Per Capita around 1977. This decrease in gdp remained present until 2002, but is now rising again.
 
 ## Including Plots
 
