@@ -18,6 +18,26 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r gapminder_data}
 gap.in <- read.csv("https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv")
 summary (gap.in)
+
+
+# install dplyr
+install.packages('dplyr')
+library('dplyr')
+
+gap.in %>%
+  filter(country %in% c("Angola", "Japan", "United States")) %>%
+  select(country, year, gdpPercap)
+  group_by(country)
+  
+Angola <- gap.in$country == "Angola" 
+  plot(gap.in$year[Angola], gap.in$gdpPercap[Angola])
+
+Japan <- gap.in$country == "Japan"
+  plot(gap.in$year[Japan], gap.in$gdpPercap[Japan])
+
+United_States <- gap.in$country == "United States"
+  plot(gap.in$year[United_States], gap.in$gdpPercap[United_States])
+  
 ```
 
 ## Including Plots
