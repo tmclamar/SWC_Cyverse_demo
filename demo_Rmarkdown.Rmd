@@ -43,25 +43,34 @@ United_States <- gap.in$country == "United States"
 While Japan and the US have been steadily increaising in theoir gdp Per Capita since 1952, Angola had a marked decrease in gdp Per Capita around 1977. This decrease in gdp remained present until 2002, but is now rising again.
 
 ```
+#Sort data for continents according to mean life expectancy, max and min for each continent
+
 gap.in %>%
-  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>%
-  select(continent, lifeEXP) %>%
+  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>% 
+  select(continent, lifeExp) %>%
   group_by(continent) %>%
   summarize(lifeExpMean = mean(lifeExp), lifeExpSD = sd(lifeExp))
 
 gap.in %>%
   filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>%
-  select(continent, lifeEXP) %>%
+  select(continent, lifeExp) %>%
   group_by(continent) %>%
-  arrange(lifeEXP)
-  
-gap.in %>%
-  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia"), lifeExp) %>%
-  group_by(continent) %>%
-  arrange(desc(lifeEXP))
-  
-  
+  arrange(lifeExp)
 
+gap.in %>%
+  filter(continent %in% c("Africa")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(lifeExp)  
+
+gap.in %>%
+  filter(continent %in% c("Africa")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp))
+  
+  
+```
 
 ## Including Plots
 
