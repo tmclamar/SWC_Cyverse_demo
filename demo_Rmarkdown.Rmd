@@ -46,8 +46,7 @@ While Japan and the US have been steadily increaising in theoir gdp Per Capita s
 #Sort data for continents according to mean life expectancy, max and min for each continent
 
 gap.in %>%
-  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>% 
-  select(continent, lifeExp) %>%
+  filter(continent %in% c("Africa", "Europe", "Americas", "Oceania", "Asia")) %>%   select(continent, lifeExp) %>%
   group_by(continent) %>%
   summarize(lifeExpMean = mean(lifeExp), lifeExpSD = sd(lifeExp))
 
@@ -68,9 +67,59 @@ gap.in %>%
   select(continent, lifeExp) %>%
   group_by(continent) %>%
   arrange(desc(lifeExp))
+
+gap.in %>%
+  filter(continent %in% c("Asia")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(lifeExp)  
+
+gap.in %>%
+  filter(continent %in% c("Asia")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp))
   
+gap.in %>%
+  filter(continent %in% c("Europe")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(lifeExp)  
+
+gap.in %>%
+  filter(continent %in% c("Europe")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp))  
+  
+gap.in %>%
+  filter(continent %in% c("Americas")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(lifeExp)  
+
+gap.in %>%
+  filter(continent %in% c("Americas")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp))  
+  
+gap.in %>%
+  filter(continent %in% c("Oceania")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(lifeExp)  
+
+gap.in %>%
+  filter(continent %in% c("Oceania")) %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  arrange(desc(lifeExp))  
   
 ```
+
+The average life expectancy for Africa, Americas, Asia, Europe, and Oceania are as follows: 48,60,71,74.  The maximum age for each continent are: 76,80,82,81,  and 81 resp. The minimum ages for each continent are: 23, 37, 28, 43, and 69. 
+
 
 ## Including Plots
 
